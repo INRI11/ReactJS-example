@@ -16,9 +16,25 @@ const arrObj = arr.map(el => <div class="character">
 
 const content = <h2>Hello ReactWars</h2>
 
+function onButtonClick() {
+    function handleClick(e) {
+      e.preventDefault();
+      arr.push({ name: 'Dart Weider', color: 'red' });
+
+      console.log(arr);
+    }
+  
+    return (
+        <button onClick={handleClick}>Добавить "Dart Weider" в массив</button>
+    );
+}
+
+const button = onButtonClick();
+
 ReactDom.render(
     <div>
         { content }
         { arrObj }
+        { button }
     </div>
     , container)
